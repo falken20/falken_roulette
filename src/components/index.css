@@ -44,7 +44,7 @@ body{
 
 
 .btn {
-  font-size: 200%;
+  font-size: 450% !important;
 }
 
 .flecha {
@@ -52,6 +52,6 @@ body{
 }
 
 .label-teams {
-  font-size: 300%;
+  font-size: 200%;
   color: #fff;
 }

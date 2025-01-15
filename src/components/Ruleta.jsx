@@ -1,6 +1,6 @@
 import React from 'react'
 //ROD: import ruleta from '../img/wheel.png'
-import ruleta from '../img/wheel-todovertical-2.png'
+import ruleta from '../img/wheel-todovertical-3.png'
 import flecha from '../img/flecha.png'
 import './index.css';
 
@@ -22,7 +22,7 @@ const Ruleta = (props) => (
             />
         </p>
         <p align="center">
-            <button id="btnAnimar" disabled={props.animatedRuleta} onClick={props.animarEvent} className="btn btn-warning btn-orange btn-lg">GIRA LA RULETA</button>
+            <button id="btnAnimar" disabled={props.animatedRuleta} onClick={props.animarEvent} className="btn btn-warning btn-orange btn-lg">JUGAR</button>
         </p>
     </div>
 
