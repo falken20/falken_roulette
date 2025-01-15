@@ -22,12 +22,12 @@ class App extends Component {
 
 		//ROD: this.premios_list 	=	[100,200,0,500,50,-1,0,150];
 		this.teams_list 	=	[
-								'Escalada deportiva',
-								'Carreras por montaña',
+								'Escalada deportiva, dry tooling deportivo y boulder',
+								'Carreras por montaña (Trail)',
 								'Montañismo y trekking',
-								'Escalada en pared',
+								'Escalada en pared y de aventura',
 								'Alpinismo',
-								'Esquí, Espeleo, Skimo',
+								'Esquí de montaña, marcha nórdica, barrancos, MTB, snowboard de montaña, etc.',
 								'Actividad Junior',
 							];
 		
@@ -158,7 +158,7 @@ class App extends Component {
 					<div className="row">
 
 						<div className="col-md-4">
-							<h2 align="center" className="ruleta-puntos">CONCURSANTES</h2>
+							<h2 align="center" className="ruleta-puntos">SELECCIONADOS</h2>
 							<br/>
 							{
 								this.teams_selected.map((item, index) => (
