@@ -44,6 +44,7 @@ body{
 
 
 .btn {
+  margin-top: 40px;
   font-size: 450% !important;
 }
 
@@ -58,4 +59,9 @@ body{
 
 .swal2-popup {
   font-size: 28px !important;
+}
+
+.button_play {
+  height: 140px;
+  margin-top: 40px;
 }

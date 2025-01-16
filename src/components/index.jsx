@@ -160,7 +160,7 @@ class App extends Component {
 						</div>
 
 						<div className="col-md-6">
-							<h2 align="center" className="ruleta-puntos">SELECCIONADOS</h2>
+							<h2 align="center" className="ruleta-puntos">CONCURSANTES</h2>
 							<br/>
 							{
 								this.teams_selected.map((item, index) => (

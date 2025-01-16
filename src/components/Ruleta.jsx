@@ -2,6 +2,7 @@ import React from 'react'
 //ROD: import ruleta from '../img/wheel.png'
 import ruleta from '../img/wheel.png'
 import flecha from '../img/flecha.png'
+import button from '../img/button_play.png'
 import './index.css';
 
 const Ruleta = (props) => (
@@ -24,7 +25,8 @@ const Ruleta = (props) => (
         </p>
 
         <p align="center">
-            <button id="btnAnimar" disabled={props.animatedRuleta} onClick={props.animarEvent} className="btn btn-warning btn-orange btn-lg">JUGAR</button>
+            {/*<button id="btnAnimar" disabled={props.animatedRuleta} onClick={props.animarEvent} className="btn btn-warning btn-orange btn-lg">JUGAR</button>*/}
+            <a href={props.animarEvent}><img src={button} alt="Jugar" className="button_play" align="center" onClick={props.animarEvent}/></a>
         </p>
     </div>
 
