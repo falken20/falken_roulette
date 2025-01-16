@@ -4,6 +4,7 @@ import swal from 'sweetalert2'
 import Ruleta from './Ruleta'
 import Premios from './Premios'
 import './index.css';
+import roulette from '../sounds/roulette.mp3'
 
 class App extends Component {
 	
@@ -17,8 +18,8 @@ class App extends Component {
 		}
 
 		this.teams_selected = [
-			// { id: 1, premio: 'Gala Becas TodVertical', precio: 'PasaMontaña'},
-			// {cat: 'Gala Becas TodVertical'},
+			// {id: 'Gala Becas TodVertical', cat: 'Alpinismo'},
+			'Esquí de montaña, marcha nórdica, barrancos, MTB, snowboard de montaña, etc.',
 		]
 
 		//ROD: this.premios_list 	=	[100,200,0,500,50,-1,0,150];
@@ -54,11 +55,9 @@ class App extends Component {
 
 	animarEvent() {
 		// Play a sound of a roulette
-		//var audio = new Audio('../sounds/roulette.mp3');
-		var audio = new Audio('hthttp://cd.textfiles.com/mmplatinum/SOUNDS/WAV/MOREWAV/ROULETTE.WAV');
+		var audio = new Audio(roulette);
 		audio.play();
-
-		// ROD: Pause the sound of the roulette after 5 seconds
+		audio.playbackRate = 0.8;
 		setTimeout(() => {
 			audio.pause();
 		}, 5000);
@@ -112,23 +111,11 @@ class App extends Component {
 
 		}
 
-		{/*ROD:
-		if(this.points_data === -1){
-			swal("Felicidades", "Ha ganado un premio!!!", "success");
-		}
-		else if(this.points_data > 0) {
-			swal("Ganó", "Ha ganado " + this.points_data + " puntos", "success");
-		}
-		else {
-			swal("Perdiste", "Inténtelo nuevamente... :( ", "warning");
-		}
-		*/}
-
 		// Check if the item is already in the list
 		if (this.teams_selected.find(item => item.cat === this.points_data)) {
-			swal("Ups...", "Ya ha salido esta categoría...", "warning");
+			swal("Ya ha salido esta categoría...vuelve a intentarlo", "", "warning");
 		} else {
-			swal(this.points_data, "A jugar!!!!", "success");
+			swal(this.points_data, "", "success");
 			this.teams_selected.push({cat: this.points_data});
 		}
 	}
@@ -156,10 +143,20 @@ class App extends Component {
 
 		return (
 			<div  id="main">
-				<div className="container">
 					<div className="row">
 
-						<div className="col-md-4">
+					<div className="col-md-6">
+							<Ruleta 
+								total_points={this.state.total_points}
+								animatedRuleta={this.state.animated_ruleta} 
+								data_ruleta={this.state.data_ruleta}
+								showRuletaResult={this.showRuletaResult}
+								animarEvent={this.animarEvent}
+								ruleta={this.ruleta}
+							/>
+						</div>
+
+						<div className="col-md-6">
 							<h2 align="center" className="ruleta-puntos">SELECCIONADOS</h2>
 							<br/>
 							{
@@ -176,18 +173,8 @@ class App extends Component {
 							<br/>
 						</div>
 
-						<div className="col-md-6">
-							<Ruleta 
-								total_points={this.state.total_points}
-								animatedRuleta={this.state.animated_ruleta} 
-								data_ruleta={this.state.data_ruleta}
-								showRuletaResult={this.showRuletaResult}
-								animarEvent={this.animarEvent}
-								ruleta={this.ruleta}
-							/>
-						</div>
+
 					</div>
-				</div>
 			</div>
 		)
 

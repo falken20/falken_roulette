@@ -1,6 +1,6 @@
 import React from 'react'
 //ROD: import ruleta from '../img/wheel.png'
-import ruleta from '../img/wheel-todovertical-3.png'
+import ruleta from '../img/wheel.png'
 import flecha from '../img/flecha.png'
 import './index.css';
 
