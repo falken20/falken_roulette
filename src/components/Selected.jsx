@@ -2,7 +2,7 @@ import React from 'react'
 //import ruleta from '../img/wheel.png'
 import './index.css';
 
-const Premios = (props) => (
+const Selected = (props) => (
 
     <div>
         <p align="center">
@@ -15,4 +15,4 @@ const Premios = (props) => (
 
 )
 
-export default Premios
+export default Selected

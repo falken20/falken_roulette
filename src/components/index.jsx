@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import swal from 'sweetalert'
 import swal from 'sweetalert2'
 import Ruleta from './Ruleta'
-import Premios from './Premios'
+import Selected from './Selected'
 import './index.css';
 import roulette from '../sounds/roulette.mp3'
 
@@ -22,7 +22,6 @@ class App extends Component {
 			'Esquí de montaña, marcha nórdica, barrancos, MTB, snowboard de montaña, etc.',
 		]
 
-		//ROD: this.premios_list 	=	[100,200,0,500,50,-1,0,150];
 		this.teams_list 	=	[
 								'Escalada deportiva, dry tooling deportivo y boulder',
 								'Carreras por montaña (Trail)',
@@ -161,8 +160,7 @@ class App extends Component {
 							<br/>
 							{
 								this.teams_selected.map((item, index) => (
-						       		<Premios
-										//ROD: key={item.id}
+						       		<Selected
 										indice={index}
 										data={item}
 										total_points={this.state.total_points}
