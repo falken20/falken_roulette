@@ -19,7 +19,6 @@ class App extends Component {
 
 		this.teams_selected = [
 			// {id: 'Gala Becas TodVertical', cat: 'Alpinismo'},
-			'Esquí de montaña, marcha nórdica, barrancos, MTB, snowboard de montaña, etc.',
 		]
 
 		this.teams_list 	=	[
@@ -61,12 +60,14 @@ class App extends Component {
 			audio.pause();
 		}, 5000);
 
+		var num_elem_ruleta = 7
+
 		var ruleta_temp = this.rulets_data;
 
 		let grados_circulo 	=	360;
-		let premio 	= 	grados_circulo / 7;
+		let premio 	= 	grados_circulo / num_elem_ruleta;
 		
-		var valor_aleatorio =	Math.floor(Math.random()*7);
+		var valor_aleatorio =	Math.floor(Math.random() * num_elem_ruleta);
 		var ruleta_result 	= 	premio * valor_aleatorio;
 		var valor_premio 	= 	(grados_circulo	* 4) + ruleta_result;
 		
@@ -114,7 +115,10 @@ class App extends Component {
 		if (this.teams_selected.find(item => item.cat === this.points_data)) {
 			swal("Ya ha salido esta categoría...vuelve a intentarlo", "", "warning");
 		} else {
-			swal(this.points_data, "", "success");
+			swal({
+				title: this.points_data,
+				icon: "success",
+			});
 			this.teams_selected.push({cat: this.points_data});
 		}
 	}
