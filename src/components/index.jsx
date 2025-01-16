@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import swal from 'sweetalert'
+// import swal from 'sweetalert'
+import swal from 'sweetalert2'
 import Ruleta from './Ruleta'
 import Premios from './Premios'
 import './index.css';
@@ -53,7 +54,8 @@ class App extends Component {
 
 	animarEvent() {
 		// Play a sound of a roulette
-		var audio = new Audio('../sounds/roulette.mp3');
+		//var audio = new Audio('../sounds/roulette.mp3');
+		var audio = new Audio('hthttp://cd.textfiles.com/mmplatinum/SOUNDS/WAV/MOREWAV/ROULETTE.WAV');
 		audio.play();
 
 		// ROD: Pause the sound of the roulette after 5 seconds
