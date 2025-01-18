@@ -35,4 +35,7 @@ npm start
 - React
 - SweetAlert2 component
 
+##### Download Node.js
+https://nodejs.org/en/download/
+
 
